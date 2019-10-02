@@ -14,18 +14,26 @@ class Navbar extends Component {
     const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <ul className="navbar-nav ml-auto">
-        <h4 style={{ color: "white" }}>{user.name}</h4>
-        <li className="nav-item">
-          <a
-            href="/"
-            onClick={this.onLogoutClick.bind(this)}
-            className="nav-link"
-          >
-            <button className="btn btn-danger btn-sm">Logout</button>
-          </a>
-        </li>
-      </ul>
+      <div className=" navbar-collapse">
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
+            <h4 className="nav-link" style={{ color: "white" }}>
+              Welcome: {user.name}
+            </h4>
+          </li>
+        </ul>
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
+            <a
+              href="/"
+              onClick={this.onLogoutClick.bind(this)}
+              className="nav-link"
+            >
+              <button className="btn btn-danger btn-sm">Logout</button>
+            </a>
+          </li>
+        </ul>
+      </div>
     );
     const guestLinks = (
       <ul className="navbar-nav ml-auto">
